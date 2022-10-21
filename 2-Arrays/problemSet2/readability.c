@@ -21,11 +21,12 @@ int main(void) {
     printf("Letter quantity: %i\n", letters);
     printf("Word quantity: %i\n", words);
     printf("Sentences quantity: %i\n", sentences);
-    float lettersPer100Words = (count_letters(text)/count_words(text)) * 100;
-    float sentencesPer100Words = (count_sentences(text) / count_words(text)) * 100;
+    //typecasting got kinda ugly, maybe fix later?
+    float lettersPer100Words = ((float)count_letters(text)/(float)count_words(text)) * 100;
+    float sentencesPer100Words = ((float)count_sentences(text) /(float) count_words(text)) * 100;
     float CLIndex = (0.0588 * lettersPer100Words) - (0.296 * sentencesPer100Words) - 15.8;
 
-    printf("CL Index = %f\n", CLIndex);
+    printf("CL Index = %i\n", (int) round(CLIndex));
 
 
 
